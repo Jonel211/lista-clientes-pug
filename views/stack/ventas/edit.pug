@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  .d-flex.justify-content-center.align-items-center.my-5
+    .card.text-center(style="width: 100%; max-width: 500px;")
+      .card-header.bg-light.py-3
+        h3.m-0.text-uppercase.fw-normal ACTUALIZAR CLIENTE
+      .card-body.p-4
+        // El formulario ahora se envía a /edit/su_id_aqui
+        form(action="/edit/" + cliente.id method="POST")
+          .input-group.mb-3
+            span.input-group-text(style="width: 110px;") Nombre
+            input.form-control(type="text" placeholder="Nombres" name="nombre" value=cliente.nombre)
+          .input-group.mb-3
+            span.input-group-text(style="width: 110px;") Apellidos
+            input.form-control(type="text" placeholder="Apellidos" name="apellidos" value=cliente.apellidos)
+          .input-group.mb-3
+            span.input-group-text(style="width: 110px;") Nro. DNI
+            input.form-control(type="text" placeholder="Nro. DNI" name="dni" value=cliente.dni)
+          .input-group.mb-4
+            span.input-group-text(style="width: 110px;") Nro. Teléfono
+            input.form-control(type="text" placeholder="Nro. Celular" name="telefono" value=cliente.telefono)
+          button.btn.btn-success.w-100.mb-2(type="submit") Actualizar
+          a.btn.btn-danger.w-100(href="/ventas/cliente") Cancelar
+          

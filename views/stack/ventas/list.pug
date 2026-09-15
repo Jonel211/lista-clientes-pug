@@ -1,0 +1,36 @@
+extends ../layout
+
+block content
+  .container.mt-4
+    h2.text-center.text-uppercase.mb-4 LISTADO DE CLIENTES
+    
+    .mb-3
+      a.btn.btn-danger(href="/add") Nuevo Cliente
+
+    .table-responsive
+      table.table.table-bordered.text-center.align-middle
+        thead.table-dark
+          tr
+            th(style="width: 25%;") Nombre
+            th(style="width: 25%;") Apellido
+            th(style="width: 15%;") Nro. DNI
+            th(style="width: 15%;") Nro. Teléfono
+            th(style="width: 20%;") Acciones
+        tbody
+          each cliente in clientes
+            tr
+              td= cliente.nombre
+              td= cliente.apellidos
+              td= cliente.dni
+              td= cliente.telefono
+              td
+                // Le pegamos el ID del cliente al enlace de editar
+                a.btn.btn-warning.btn-sm.me-2(href="/edit/" + cliente.id) Actualizar
+                button.btn.btn-danger.btn-sm(type="button") Eliminar
+          else
+            tr
+              td.text-center.py-4.fw-bold.text-muted(colspan="5") Aún no hay clientes registrados. ¡Agrega uno nuevo!
+        tfoot
+          tr
+            td.table-dark.text-uppercase.fw-bold(colspan="5") REGISTRO DE CLIENTES
+            
