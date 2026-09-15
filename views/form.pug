@@ -1,0 +1,13 @@
+extends layout2
+
+block content
+  h2 #{titulo}
+  form(method='POST', action=accion)
+    .mb-3
+      label.form-label Nombre
+      input.form-control(type='text', name='nombre', value=producto.nombre || '', required)
+    .mb-3
+      label.form-label Precio
+      input.form-control(type='number', name='precio', value=producto.precio || '', required)
+    button.btn.btn-primary(type='submit') Guardar
+    a.btn.btn-secondary.ms-2(href='/') Cancelar
