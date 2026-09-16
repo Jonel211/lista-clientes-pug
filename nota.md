@@ -11,11 +11,4 @@ Introduccion a las plantillas de node:
 ## Configuración de variable de VSC:
 ```
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-code .
 ```
-
-
-
-
-
-
