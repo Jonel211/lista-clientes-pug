@@ -52,7 +52,7 @@ Acceder a: [http://localhost:3000/](http://localhost:3000/)
 ---
 
 ### Ejercicio de Aplicación: Lista de Clientes
-Pasos para ejecutar la aplicación integrada final:
+Pasos para ejecutar la aplicación:
 ```bash
 git checkout main
 node app3.js
@@ -61,3 +61,20 @@ Acceder a: [http://localhost:3000/](http://localhost:3000/)
 
 #### Vista previa del Ejercicio de Aplicación
 ![Lista de Clientes](./screenshots/ejercicio_aplicacion.png)
+
+---
+
+### Ejercicio de Aplicación 2: Lista de Clientes utilizando el ODM Mongoose
+Pasos para ejecutar la aplicación integrada con Mongoose:
+```bash
+git checkout connection-mongo
+copy .env.example .env 
+
+- configura el archivo .env con tus credenciales de MongoDB
+
+node server.js
+```
+Acceder a: [http://localhost:5000/](http://localhost:5000/) o [http://localhost:3000/](http://localhost:3000/) dependiendo de la configuración del puerto en tu archivo `.env`.
+
+#### Vista previa del Ejercicio de Aplicación 2
+![Clientes con Mongoose](./screenshots/ejercicio_aplicacion2.png)
