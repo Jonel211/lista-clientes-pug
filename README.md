@@ -52,7 +52,7 @@ Acceder a: [http://localhost:3000/](http://localhost:3000/)
 ---
 
 ### Ejercicio de Aplicación: Lista de Clientes
-Pasos para ejecutar la aplicación integrada final:
+Pasos para ejecutar la aplicación:
 ```bash
 git checkout main
 node app3.js
@@ -61,3 +61,49 @@ Acceder a: [http://localhost:3000/](http://localhost:3000/)
 
 #### Vista previa del Ejercicio de Aplicación
 ![Lista de Clientes](./screenshots/ejercicio_aplicacion.png)
+
+---
+
+### Ejercicio de Aplicación 2: Lista de Clientes utilizando el ODM Mongoose
+Pasos para ejecutar la aplicación integrada con Mongoose:
+```bash
+git checkout connection-mongo
+copy .env.example .env 
+
+- configura el archivo .env con tus credenciales de MongoDB
+
+node server.js
+```
+Acceder a: [http://localhost:5000/](http://localhost:5000/) o [http://localhost:3000/](http://localhost:3000/) dependiendo de la configuración del puerto en tu archivo `.env`.
+
+#### Vista previa del Ejercicio de Aplicación 2
+![Clientes con Mongoose](./screenshots/ejercicio_aplicacion2.png)
+
+---
+
+### Ejercicio de Aplicación 3: Lista de Clientes utilizando el mysql2 y el ORM Sequelize
+Pasos para ejecutar la aplicación integrada con Sequelize:
+1. **Cambiar a la rama correspondiente**:
+   ```bash
+   git checkout sql-sequelize-cli
+   ```
+
+2. **Base de Datos**:
+   * Abre XAMPP (phpMyAdmin o consola) y crea una base de datos vacía llamada `db_clientes`.
+   * *(Opcional)* Si tu MySQL tiene contraseña, edita el archivo `config/config.json` para agregarla en `"password": ""`.
+
+3. **Migraciones (Crear tablas)**:
+   Ejecuta el siguiente comando para que Sequelize genere automáticamente la tabla de clientes en tu base de datos:
+   ```bash
+   npx sequelize-cli db:migrate
+   ```
+
+4. **Levantar el Servidor**:
+   ```bash
+   node server2.js
+   ```
+
+Acceder a: [http://localhost:3000/](http://localhost:3000/)
+
+#### Vista previa del Ejercicio de Aplicación 3
+![Clientes con Sequelize](./screenshots/ejercicio_aplicacion3.png)
